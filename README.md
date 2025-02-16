@@ -41,20 +41,23 @@ Enter delete mode by clicking the - button, then click the ✕ button to delete 
 Right-click on an account to see a warning message.
 
 ## Screenshots
+Popup Interface
+
+Clean and modern interface for managing accounts.
+
 ![image](https://github.com/user-attachments/assets/8983c72f-b004-4e0c-83c9-5721423909af)
 ![image](https://github.com/user-attachments/assets/a81f6cb5-ba0e-450c-ac17-b5131e6a092a)
 
 ![image](https://github.com/user-attachments/assets/2b12a6c5-8577-4cfa-a147-217b66a0b358) ![image](https://github.com/user-attachments/assets/d5732336-28bb-40c8-bf71-1cd96c000ff5)
-
-Popup Interface
-Clean and modern interface for managing accounts.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Author
 Author: DeepSeek
+
 Uploader: Re1yte
+
 Email: 1079467460wu@gmail.com
 
 ## Contributing
