@@ -1,5 +1,4 @@
 // Load saved accounts
-// popup.js
 let accounts = JSON.parse(localStorage.getItem('fanzaAccounts')) || [];
 let deleteMode = false;
 
@@ -27,8 +26,8 @@ function displayAccounts() {
   document.querySelectorAll('.switch-btn, .delete-mode-btn').forEach(button => {
     button.addEventListener('click', () => {
       const index = button.dataset.index;
-      if(deleteMode) {
-        if(confirm("Are you sure you want to delete this account?")) {
+      if (deleteMode) {
+        if (confirm("Are you sure you want to delete this account?")) {
           accounts.splice(index, 1);
           localStorage.setItem('fanzaAccounts', JSON.stringify(accounts));
           displayAccounts();
@@ -69,15 +68,6 @@ function switchAccount(index) {
   const account = accounts[index];
   if (account) {
     chrome.runtime.sendMessage({ action: 'switchAccount', account });
-  }
-}
-
-// Delete an account
-function deleteAccount(index) {
-  if (confirm("Are you sure you want to delete this account?")) {
-    accounts.splice(index, 1);
-    localStorage.setItem('fanzaAccounts', JSON.stringify(accounts));
-    displayAccounts(); // Refresh the list
   }
 }
 

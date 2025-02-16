@@ -1,16 +1,25 @@
 let extensionTabs = [];
-let originalTabId = null; // Track original tab
+let originalTabId = null;
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'switchAccount') {
-    originalTabId = sender.tab.id; // Store current tab ID
-    const { email, password } = request.account;
-    switchFanzaAccount(email, password);
+    // Get current active tab before switching
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+      if (tabs[0]) {
+        originalTabId = tabs[0].id;
+        const { email, password } = request.account;
+        switchFanzaAccount(email, password);
+      }
+    });
   }
+  return true; // Keep the message channel open for async response
 });
 
 async function switchFanzaAccount(email, password) {
+  console.log("Starting account switch...");
+
   // Step 1: Log out (open in background)
+  console.log("Logging out...");
   const logoutTab = await chrome.tabs.create({ 
     url: 'https://accounts.dmm.co.jp/service/logout/=/path=https%3A%2F%2Fwww.dmm.co.jp%2Ftop%2F',
     active: false // Don't switch to this tab
@@ -28,11 +37,23 @@ async function switchFanzaAccount(email, password) {
   });
 
   // Step 2: Open login page in background
+  console.log("Opening login page...");
   const loginTab = await chrome.tabs.create({
     url: 'https://accounts.dmm.co.jp/service/login/password',
     active: false // Don't switch to this tab
   });
   extensionTabs.push(loginTab.id);
+
+  // Wait for the login page to load
+  console.log("Waiting for login page to load...");
+  await new Promise(resolve => {
+    chrome.tabs.onUpdated.addListener(function listener(tabId, info) {
+      if (tabId === loginTab.id && info.status === 'complete') {
+        chrome.tabs.onUpdated.removeListener(listener);
+        resolve();
+      }
+    });
+  });
 
   // Step 3: Fill and submit the login form
   console.log("Filling login form...");
@@ -88,23 +109,20 @@ async function switchFanzaAccount(email, password) {
   }
   extensionTabs = []; // Reset the list
 
- // Return to original tab if it still exists
+  // Step 6: Return to the original tab
   if (originalTabId) {
-    chrome.tabs.get(originalTabId, (tab) => {
-      if (!chrome.runtime.lastError && tab) {
-        chrome.tabs.update(originalTabId, { active: true });
-      }
-    });
+    console.log("Returning to original tab...");
+    chrome.tabs.update(originalTabId, { active: true });
   }
 
-  // Reload game page if needed
+  // Step 7: Reload the game page if needed
+  console.log("Reloading game page...");
   const gameTabs = await chrome.tabs.query({ 
     url: [
       'https://games.dmm.co.jp/detail/lilyange*',
       'https://pc-play.games.dmm.co.jp/play/lilyange/*'
-    ] 
+    ]
   });
-  
   if (gameTabs.length > 0) {
     gameTabs.forEach(tab => {
       chrome.tabs.reload(tab.id);
