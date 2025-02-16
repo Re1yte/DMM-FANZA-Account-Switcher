@@ -1,0 +1,154 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  padding: 0;
+  width: 250px;
+  background: #f8f9fa;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0; /* Line below the title */
+  background: white;
+}
+
+h1 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0;
+}
+
+.add-btn {
+  background: none;
+  border: 2px solid #2d3436; /* Circle around the + */
+  font-size: 18px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #2d3436;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.add-btn:hover {
+  background: #e9ecef;
+}
+
+#accounts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px; /* Slim spacing between accounts */
+}
+
+/* Alternating background colors */
+.account {
+  padding: 10px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account:nth-child(odd) {
+  background: #e9ecef; /* Grey background for odd items */
+}
+
+.account strong {
+  display: block;
+  font-size: 13px;
+  color: #2d3436;
+  margin-bottom: 2px;
+}
+
+.account p {
+  font-size: 12px;
+  color: #636e72;
+  margin: 0;
+}
+
+/* Updated switch button (↵ symbol) */
+.switch-btn {
+  background-color: #e60012; /* FANZA red background */
+  border: 2px solid #e60012;
+  font-size: 19px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white; /* White symbol color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-weight: bold;
+  font-family: Arial, sans-serif; /* Ensures symbol visibility */
+}
+
+.switch-btn:hover {
+  background-color: #cc0010; /* Darker red on hover */
+  border-color: #cc0010;
+}
+
+/* Ensure proper symbol display */
+.switch-btn::after {
+  content: "\1F8A0"; /* Unicode for ↵ symbol */
+  transform: scaleX(1.2) translateY(-1.5px) translateX(-0.7px);
+}
+
+.delete-mode-btn {
+  background-color: #e60012; /* FANZA red background */
+  border: 2px solid #e60012;
+  font-size: 19px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white; /* White symbol color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-weight: bold;
+  font-family: Arial, sans-serif; /* Ensures symbol visibility */
+}
+
+.delete-mode-btn::after {
+  content: "\2716";
+  transform: scaleX(1.15) translateY(-1.9px) translateX(0.125px);
+}
+
+.delete-mode-btn:hover {
+  background-color: #cc0010; /* Darker red on hover */
+  border-color: #cc0010;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.remove-btn {
+  background: none;
+  border: 2px solid #2d3436; /* Circle around the - */
+  font-size: 20px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #2d3436;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.remove-btn:hover {
+  background: #e9ecef;
+}

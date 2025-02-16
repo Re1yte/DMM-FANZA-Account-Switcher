@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Fanza Account Switcher",
+  "version": "1.0",
+  "description": "Switch between Fanza accounts easily.",
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": [
+    "https://accounts.dmm.co.jp/*",
+    "https://games.dmm.co.jp/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "192": "icon192.png"
+  }
+}
