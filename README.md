@@ -2,48 +2,46 @@
 A lightweight browser extension designed to simplify switching between multiple Fanza/DMM accounts. Save your login credentials with optional notes, switch accounts with a single click, and enjoy a clean, modern interface. Perfect for users managing multiple accounts with minimal hassle.
 
 ## Features
-Account Management: Save and manage multiple Fanza/DMM accounts with email, password, and optional notes.
+- Account Management: Save and manage multiple Fanza/DMM accounts with email, password, and optional notes.
 
-One-Click Switching: Switch between accounts seamlessly with a single click.
+- One-Click Switching: Switch between accounts seamlessly with a single click.
 
-Modern Interface: Clean and intuitive design with alternating background colors for easy navigation.
+- Modern Interface: Clean and intuitive design with alternating background colors for easy navigation.
 
-Delete Mode: Toggle delete mode to remove accounts with a confirmation prompt.
+- Delete Mode: Toggle delete mode to remove accounts with a confirmation prompt.
 
-Right-Click Warning: Right-click on an account to see a warning message (no accidental deletions).
+- Right-Click Menu: Right-click on an account field to see additional options for renaming and showing accounts.
 
-Customizable Styling: Stylish buttons and icons with Fanza's theme colors (red and grey).
+- Customized Styling: Stylish buttons and icons with Fanza's theme colors (red and grey).
 
 ## Installation
-Clone or download this repository.
+1. Clone or download this repository as zip.
+2. Unzip the files in a folder
+3. Open your browser's extension management page:
 
-Open your browser's extension management page:
+    - Chrome: ```chrome://extensions/```
 
-Chrome: chrome://extensions/
+    - Edge: ```edge://extensions/```
 
-Edge: edge://extensions/
-
-Firefox: about:addons
-
-Enable Developer Mode.
-
-Click Load Unpacked and select the extension folder.
-
+    - Firefox: ```about:addons```
+4. Enable Developer Mode.
+5. Click Load Unpacked and select the unzipped extension folder.
+6. Enable the extension
 ## Usage
-Click the extension icon to open the popup.
+1. Click the extension icon to open the popup.
 
-Add accounts using the + button.
+2. Add accounts using the + button.
 
-Switch accounts by clicking the ↵ button.
+3. Switch accounts by clicking the ↵ button.
 
-Enter delete mode by clicking the - button, then click the ✕ button to delete an account.
+4. Enter delete mode by clicking the - button, then click the ✕ button to delete an account.
 
-Right-click on an account to see a warning message.
+5. Right-click on an account to see an additional menu
 
-## Screenshots
-Popup Interface
+## Screenshots(Outdate)
+Popup Interface(Outdate)
 
-Clean and modern interface for managing accounts.
+Clean and modern interface for managing accounts.(Outdate)
 
 ![image](https://github.com/user-attachments/assets/8983c72f-b004-4e0c-83c9-5721423909af)
 ![image](https://github.com/user-attachments/assets/a81f6cb5-ba0e-450c-ac17-b5131e6a092a)
@@ -64,6 +62,6 @@ Email: 1079467460wu@gmail.com
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
 ## Acknowledgments
-Inspired by the need for a simple account-switching solution for Fanza/DMM users.
+- Inspired by the need for a simple account-switching solution for Fanza/DMM users.
 
-Thanks to the Chrome Extension documentation for guidance.
+- Thanks to the Chrome Extension documentation for guidance.
