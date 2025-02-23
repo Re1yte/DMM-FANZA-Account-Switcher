@@ -8,14 +8,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       if (tabs[0]) {
         originalTabId = tabs[0].id;
         const { email, password } = request.account;
-        switchFanzaAccount(email, password);
+        switchFanzaAccount(email, password, sendResponse);
       }
     });
+    return true; // Keep the message channel open for async response
   }
-  return true; // Keep the message channel open for async response
 });
 
-async function switchFanzaAccount(email, password) {
+async function switchFanzaAccount(email, password, sendResponse) {
   console.log("Starting account switch...");
 
   // Step 1: Log out (open in background)
@@ -26,15 +26,8 @@ async function switchFanzaAccount(email, password) {
   });
   extensionTabs.push(logoutTab.id);
 
-  // Wait for logout completion
-  await new Promise(resolve => {
-    chrome.tabs.onUpdated.addListener(function listener(tabId, info) {
-      if (tabId === logoutTab.id && info.status === 'complete') {
-        chrome.tabs.onUpdated.removeListener(listener);
-        resolve();
-      }
-    });
-  });
+  // Add a delay of 1.5 seconds before proceeding to the next step
+  await new Promise(resolve => setTimeout(resolve, 1500));
 
   // Step 2: Open login page in background
   console.log("Opening login page...");
@@ -119,8 +112,8 @@ async function switchFanzaAccount(email, password) {
   console.log("Reloading game page...");
   const gameTabs = await chrome.tabs.query({ 
     url: [
-      'https://games.dmm.co.jp/detail/lilyange*',
-      'https://pc-play.games.dmm.co.jp/play/lilyange/*'
+      'https://games.dmm.co.jp/*',
+      'https://pc-play.games.dmm.co.jp/*'
     ]
   });
   if (gameTabs.length > 0) {
@@ -128,4 +121,7 @@ async function switchFanzaAccount(email, password) {
       chrome.tabs.reload(tab.id);
     });
   }
+
+  // Send response indicating success
+  sendResponse({ success: true });
 }

@@ -35,6 +35,8 @@ h1 {
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
+  line-height: 1;
+  padding: 0 0 -2px 0; /* Visual centering adjustment */
 }
 
 .add-btn:hover {
@@ -54,6 +56,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden; /* Prevent overflow */
 }
 
 .account:nth-child(odd) {
@@ -64,7 +67,11 @@ h1 {
   display: block;
   font-size: 13px;
   color: #2d3436;
-  margin-bottom: 2px;
+  margin-bottom: 2px;]=
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+  max-width: 190px; /* Limit width to prevent overflow */
 }
 
 .account p {
@@ -121,7 +128,7 @@ h1 {
 
 .delete-mode-btn::after {
   content: "\2716";
-  transform: scaleX(1.15) translateY(-1.9px) translateX(0.125px);
+  transform: scaleX(1.15) translateY(-1.25px) translateX(0.3px);
 }
 
 .delete-mode-btn:hover {
@@ -147,8 +154,75 @@ h1 {
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
+  line-height: 1;
+  padding: 0 0 2px 0; /* Visual centering adjustment */
 }
 
 .remove-btn:hover {
   background: #e9ecef;
+}
+
+/* Slim context menu */
+.context-menu {
+  background: white;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1000;
+  padding: 0; /* Slim padding */
+  min-width: 0px; /* Fixed slim width */
+  border-radius: 8px; /* Increased from 4px for more rounded corners */
+  overflow: hidden; /* Ensures child items respect the border radius */
+}
+
+.context-menu-item {
+  padding: 3px 6px; /* Reduced padding */
+  font-size: 13px; /* Smaller font */
+  width: 100%; /* Force full width */
+  justify-content: flex-start; /* Align text to left edge */
+  box-sizing: border-box; /* Include padding in width calculation */
+  color: #2d3436;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Vertical center */
+  height: 24px; /* Fixed height */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.context-menu-item:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.context-menu-item:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.context-menu-item:nth-child(odd) {
+  background: #e9ecef; /* Alternating colors */
+}
+
+.context-menu-item:hover {
+  background: #f8f9fa;
+}
+
+/* Minimal scrollbar */
+::-webkit-scrollbar {
+  width: 4px; /* Very thin scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Fully transparent track */
+  border-radius: 2px; /* Rounded track */
+  margin: 2px; /* Add margin around scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Gray thumb */
+  border-radius: 2px; /* Rounded thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker on hover */
 }
