@@ -35,7 +35,7 @@ A lightweight browser extension designed to simplify switching between multiple 
 
 
 8. Enable the extension
-![Screenshot 2025-02-25 175327](https://github.com/user-attachments/assets/6a5348d0-85ed-4f3a-97e0-c2f00a60b710)
+![Screenshot 2025-02-25 175327](https://github.com/user-attachments/assets/c4fe2799-a3c2-4f7c-b9b2-ad8e89ce02df)
 
 
 ## Usage
