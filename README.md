@@ -24,9 +24,20 @@ A lightweight browser extension designed to simplify switching between multiple 
     - Edge: ```edge://extensions/```
 
     - Firefox: ```about:addons```
+
+
 4. Enable Developer Mode.
-5. Click Load Unpacked and select the unzipped extension folder.
-6. Enable the extension
+![Screenshot 2025-02-25 175023](https://github.com/user-attachments/assets/69ae3f8e-78d0-46b0-ad97-6b9bbbf233b4)
+
+
+6. Click Load Unpacked and select the unzipped extension folder.
+![Screenshot 2025-02-25 175138](https://github.com/user-attachments/assets/f58cb1ff-f5c1-4d3e-92c8-d4d20301b547)
+
+
+8. Enable the extension
+![Screenshot 2025-02-25 175327](https://github.com/user-attachments/assets/6a5348d0-85ed-4f3a-97e0-c2f00a60b710)
+
+
 ## Usage
 1. Click the extension icon to open the popup.
 
@@ -38,15 +49,16 @@ A lightweight browser extension designed to simplify switching between multiple 
 
 5. Right-click on an account to see an additional menu
 
-## Screenshots(Outdate)
-Popup Interface(Outdate)
+## Screenshots
+Popup Interface
 
-Clean and modern interface for managing accounts.(Outdate)
+Clean and modern interface for managing accounts.
 
-![image](https://github.com/user-attachments/assets/8983c72f-b004-4e0c-83c9-5721423909af)
-![image](https://github.com/user-attachments/assets/a81f6cb5-ba0e-450c-ac17-b5131e6a092a)
+![Screenshot 2025-02-25 175448](https://github.com/user-attachments/assets/2c74e158-b1df-4a98-8af5-7a67c3495096)
 
-![image](https://github.com/user-attachments/assets/2b12a6c5-8577-4cfa-a147-217b66a0b358) ![image](https://github.com/user-attachments/assets/d5732336-28bb-40c8-bf71-1cd96c000ff5)
+|Account Field|Deletion Mode|Right Click-Menu|
+| -------------- | -------------- |-------------- |
+|![Screenshot 2025-02-25 175455](https://github.com/user-attachments/assets/176ff3df-88a5-44c0-961a-5358c06e4f54) |![Screenshot 2025-02-25 175521](https://github.com/user-attachments/assets/7f73abf5-04b8-43ae-ac08-7b667cfd384a)|![Screenshot 2025-02-25 175534](https://github.com/user-attachments/assets/f8b03c0f-5b0a-4c5f-9e10-75c801b3346e)
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
